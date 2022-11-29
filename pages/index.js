@@ -1,5 +1,5 @@
-import Head from 'next/head';
+import Layout from '../components/Layout';
 
 export default function Home() {
-  return <div className="bg-yellow-500">Hello</div>;
+  return <Layout title="Homepage">Home page</Layout>;
 }
