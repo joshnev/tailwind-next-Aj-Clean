@@ -4,12 +4,12 @@ import React from 'react';
 
 export default function ProductItem({ product }) {
   return (
-    <div className="card mt-10">
+    <div className="card mt-5">
       <Link href={`/product/${product.slug}`}>
         <img
           src={product.image}
           alt={product.name}
-          className="rounded shadow w-[300px] h-[300px] object-cover mx-auto"
+          className="rounded shadow w-[350px] h-[300px] object-cover mx-auto"
         />
       </Link>
       <div className="flex flex-col items-center p-[5px] justify-center ">
@@ -17,7 +17,7 @@ export default function ProductItem({ product }) {
           <h2 className="text-lg">{product.name}</h2>
         </Link>
         <p>£{product.price}</p>
-        <button className="primary-button" type="button">
+        <button className="primary-button hover:text-black" type="button">
           Add to cart
         </button>
       </div>

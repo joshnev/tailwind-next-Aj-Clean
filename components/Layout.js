@@ -11,9 +11,11 @@ export default function Layout({ title, children }) {
       </Head>
       <div className="flex min-h-screen flex-col justify-between">
         <header>
-          <nav className="flex h-12 justify-between px-4 shadow-md items-center">
+          <nav className="flex h-12 justify-between px-4 shadow-md items-center bg-slate-200/90">
             <Link href="/">
-              <span className="text-lg font-semibold">Kerrys Cakes</span>
+              <span className="text-lg font-semibold text-slate-900">
+                Kerrys Cakes
+              </span>
             </Link>
             <div className="space-x-4 flex">
               <Link href="/cart">
