@@ -1,7 +1,7 @@
 const data = {
   products: [
     {
-      name: 'Chocolate Cake',
+      name: 'Chocolate Cake:',
       slug: 'chocolate-cake',
       category: 'Chocolate',
       image: '/images/chocolate-cake.png',
