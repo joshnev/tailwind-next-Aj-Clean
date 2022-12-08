@@ -101,7 +101,7 @@ function CartScreen() {
               </tbody>
             </table>
           </div>
-          <div className="card p-5 mt-2">
+          <div className="card p-5 mt-2 border-none">
             <ul>
               <li>
                 <div className="pb-3">

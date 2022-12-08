@@ -1,4 +1,5 @@
-import Image from 'next/image';
+/* eslint-disable @next/next/no-img-element */
+import Image from 'next/legacy/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useContext } from 'react';
@@ -29,18 +30,15 @@ export default function ProductScreen() {
 
   return (
     <Layout title={product.name}>
-      <div className="py-2 flex justify-center">
+      <div className="py-2">
         <Link href="/">Back to products</Link>
       </div>
       <div className="grid md:grid-cols-4 md:gap-3 mx-auto">
         <div className="md:col-span-2">
-          <Image
+          <img
             src={product.image}
             alt={product.name}
-            width={640}
-            height={640}
-            layout="responsive"
-            className="rounded-[4px]"
+            className="rounded-[4px] max-w-[100%] min-h-[70%] mx-auto object-cover"
           />
         </div>
         <div>
