@@ -14,7 +14,7 @@ export default function Layout({ title, children }) {
     <>
       <Head>
         <title>{title ? title + '- Kerrys Cakes' : 'Kerrys Cakes'}</title>
-        <meta name="description" content="Cake Ecommerce website" />
+        <meta name="description" content="Cake ecommerce website" />
       </Head>
       <div className="flex min-h-screen flex-col justify-between">
         <header>
@@ -70,6 +70,7 @@ export default function Layout({ title, children }) {
           </nav>
         </header>
         <main className="container m-auto mt-4 px-4">{children}</main>
+        &nbsp;
         <footer className="flex h-10 justify-center items-center shadow-inner">
           Kerrys Cakes @ 2022
         </footer>
