@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import Image from 'next/legacy/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useContext } from 'react';
@@ -64,7 +63,7 @@ export default function ProductScreen() {
             <div className="mb-2 flex justify-between">
               <div>Status</div>
               <div>
-                {product.countInStock > 0 ? 'In stock' : 'Out of stock'}
+                {product.countInStock > 0 ? 'Available' : 'Unavailable'}
               </div>
             </div>
             <button

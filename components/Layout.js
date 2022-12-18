@@ -1,9 +1,14 @@
+import { useSession } from 'next-auth/react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import React, { useContext, useEffect, useState } from 'react';
 import { Store } from '../utils/Store';
 
 export default function Layout({ title, children }) {
+  const { status, data: session } = useSession();
+
   const { state } = useContext(Store);
   const { cart } = state;
   const [cartItemsCount, setCartItemsCount] = useState(0);
@@ -13,15 +18,18 @@ export default function Layout({ title, children }) {
   return (
     <>
       <Head>
-        <title>{title ? title + '- Kerrys Cakes' : 'Kerrys Cakes'}</title>
-        <meta name="description" content="Cake ecommerce website" />
+        <title>
+          {title ? title + '- AJ Carpet Cleaner' : 'AJ Carpet Cleaner'}
+        </title>
+        <meta name="description" content="Carpet Cleaning website" />
       </Head>
+      <ToastContainer position="bottom-center" limit={1} />
       <div className="flex min-h-screen flex-col justify-between">
         <header>
-          <nav className="flex h-12 justify-between px-4 shadow-md items-center bg-slate-200/90">
+          <nav className="flex h-12 justify-between px-4 shadow-md items-center bg-blue-500">
             <Link href="/">
-              <span className="text-lg text-slate-900 font-semibold font-primary">
-                Kerrys Cakes
+              <span className="text-lg text-white font-semibold font-primary">
+                AJ Cleaning
               </span>
             </Link>
             <div className="space-x-4 flex">
@@ -33,7 +41,7 @@ export default function Layout({ title, children }) {
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
                     stroke="currentColor"
-                    className="w-6 h-6"
+                    className="w-6 h-6 text-white"
                   >
                     <path
                       strokeLinecap="round"
@@ -48,15 +56,23 @@ export default function Layout({ title, children }) {
                   )}
                 </span>
               </Link>
-              <Link href="/login">
-                <span className="hover:text-stone-600">
+              {status === 'loading' ? (
+                'Loading'
+              ) : session?.user ? (
+                <>
+                  <span className="text-white font-primary">
+                    {session.user.name}
+                  </span>
+                </>
+              ) : (
+                <Link href="/login">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
                     stroke="currentColor"
-                    className="w-6 h-6"
+                    className="w-6 h-6 text-white"
                   >
                     <path
                       strokeLinecap="round"
@@ -64,15 +80,15 @@ export default function Layout({ title, children }) {
                       d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
                     />
                   </svg>
-                </span>
-              </Link>
+                </Link>
+              )}
             </div>
           </nav>
         </header>
         <main className="container m-auto mt-4 px-4">{children}</main>
         &nbsp;
         <footer className="flex h-10 justify-center items-center shadow-inner">
-          Kerrys Cakes @ 2022
+          AJ Carpet Clean @ 2022
         </footer>
       </div>
     </>
