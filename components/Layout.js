@@ -5,12 +5,14 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import React, { useContext, useEffect, useState } from 'react';
 import { Store } from '../utils/Store';
+import ModalMenu from './ModalMenu';
 
 export default function Layout({ title, children }) {
   const { status, data: session } = useSession();
 
   const { state } = useContext(Store);
   const { cart } = state;
+  const [modalMenu, setModalMenu] = useState(false);
   const [cartItemsCount, setCartItemsCount] = useState(0);
   useEffect(() => {
     setCartItemsCount(cart.cartItems.reduce((a, c) => a + c.quantity, 0));
@@ -60,9 +62,19 @@ export default function Layout({ title, children }) {
                 'Loading'
               ) : session?.user ? (
                 <>
-                  <span className="text-white font-primary">
+                  <span
+                    onClick={() => setModalMenu(!modalMenu)}
+                    className="text-white font-primary cursor-pointer"
+                  >
                     {session.user.name}
                   </span>
+                  <div
+                    className={`${
+                      modalMenu ? 'max-h-[154px]' : 'max-h-0'
+                    } absolute z-20 right-0 mt-[28px] rounded-md overflow-hidden shadow-2xl transition-all delay-100}`}
+                  >
+                    <ModalMenu />
+                  </div>
                 </>
               ) : (
                 <Link href="/login">
