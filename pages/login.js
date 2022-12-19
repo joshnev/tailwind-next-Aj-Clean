@@ -41,7 +41,8 @@ export default function LoginScreen() {
   return (
     <Layout title="Login">
       <form
-        className="mx-auto max-w-screen-md"
+        noValidate
+        className="mx-auto max-w-screen-md font-primary"
         onSubmit={handleSubmit(submitHandler)}
       >
         <h1 className="mb-4 text-xl">Login</h1>
@@ -56,7 +57,7 @@ export default function LoginScreen() {
                 message: 'Please enter valid email',
               },
             })}
-            className="w-full"
+            className="w-full p-1 bg-gray-100 rounded-[5px]"
             id="email"
             autoFocus
           ></input>
@@ -72,7 +73,7 @@ export default function LoginScreen() {
               required: 'Please enter password',
               minLength: { value: 6, message: 'password is more than 5 chars' },
             })}
-            className="w-full"
+            className="w-full p-1 bg-gray-100 rounded-[5px]"
             id="password"
             autoFocus
           ></input>
@@ -83,9 +84,13 @@ export default function LoginScreen() {
         <div className="mb-4 ">
           <button className="primary-button">Login</button>
         </div>
-        <div className="mb-4 ">
-          Don&apos;t have an account? &nbsp;
-          <Link href={`/register?redirect=${redirect || '/'}`}>Register</Link>
+        <div className="mb-4">
+          <span className="italic">Don&apos;t have an account? &nbsp;</span>
+          <Link href={`/register?redirect=${redirect || '/'}`}>
+            <span className="underline underline-offset-2 text-blue-600">
+              Register here
+            </span>
+          </Link>
         </div>
       </form>
     </Layout>
