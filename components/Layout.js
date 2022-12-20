@@ -52,7 +52,7 @@ export default function Layout({ title, children }) {
                     />
                   </svg>
                   {cartItemsCount > 0 && (
-                    <span className="ml-1 rounded-[50px] bg-red-600 px-2 py-1 text-xs font-bold text-white">
+                    <span className="ml-1 rounded-[50px] bg-blue-200 px-2 py-1 text-xs font-bold text-stone-800">
                       {cartItemsCount}
                     </span>
                   )}

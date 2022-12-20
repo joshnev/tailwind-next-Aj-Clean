@@ -43,9 +43,7 @@ export default function ProductScreen() {
         <div>
           <ul>
             <li>
-              <h1 className="text-lg pt-1 underline underline-offset-4">
-                {product.name}
-              </h1>
+              <h1 className="text-lg pt-1 underline">{product.name}</h1>
             </li>
             <li className="pt-3">Category: {product.category}</li>
             <li>Description: {product.description}</li>
