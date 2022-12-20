@@ -9,6 +9,7 @@ export default function Home() {
     <Layout title="Homepage">
       <Banner />
       <Hero />
+      {/* Could this be put into a component? */}
       <h2 className="flex text-2xl font-bold font-primary mt-5 justify-center">
         Our Services
       </h2>
