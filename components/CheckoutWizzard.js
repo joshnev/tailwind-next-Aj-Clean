@@ -3,9 +3,6 @@ import React from 'react';
 export default function CheckoutWizzard({ activeStep = 0 }) {
   return (
     <>
-      <div className="font-primary text-sm flex justify-center">
-        <h1 className="pb-3">You have nearly completed your order!</h1>
-      </div>
       <div className="mb-5 flex flex-wrap font-primary">
         {[
           'User Login',

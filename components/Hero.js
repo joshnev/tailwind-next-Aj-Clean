@@ -7,9 +7,9 @@ export default function Banner() {
   return (
     <div
       className="lg:max-w-[100%] mx-auto min-h-[400px] rounded-[8px] flex flex-row justify-center gap-5 font-primary
-     px-2 pb-3 pt-[-10px] bg-slate-50 drop-shadow-lg"
+     px-2 pb-3 pt-[-10px] bg-[#f1f2f4] drop-shadow-lg"
     >
-      <div className="w-[50%] flex flex-col justify-center items-center">
+      <div className="w-[50%] flex flex-col justify-center items-center ml-4">
         <h1 className="mt-5 text-2xl font-bold">Welcome to AJ carpet clean!</h1>
         <p className="mt-2 max-w-[100%] lg:max-w-[50%]">
           We are two local Herne Bay Carpet Cleaners with 10+ years of cleaning

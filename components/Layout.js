@@ -34,9 +34,9 @@ export default function Layout({ title, children }) {
                 AJ Cleaning
               </span>
             </Link>
-            <div className="space-x-4 flex">
+            <div className="space-x-2 flex">
               <Link href="/cart">
-                <span className="flex hover:text-stone-700">
+                <span className="flex hover:bg-blue-600 p-1 rounded-md drop-shadow-md">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -64,7 +64,7 @@ export default function Layout({ title, children }) {
                 <>
                   <span
                     onClick={() => setModalMenu(!modalMenu)}
-                    className="text-white font-primary cursor-pointer"
+                    className="text-white font-primary cursor-pointer flex items-center hover:bg-blue-600 p-1 rounded-md drop-shadow-md"
                   >
                     {session.user.name}
                   </span>

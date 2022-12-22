@@ -8,8 +8,11 @@ export default function Unauthorized() {
 
   return (
     <Layout title="Unauthorized Page">
-      <h1 className="text-xl">Error</h1>
-      {message && <div className="mb-4 text-red-500">{message}</div>}
+      <h1 className="text-xl flex flex-row items-center gap-1">
+        Error
+        <span className="text-sm">😮</span>
+      </h1>
+      {message && <div className="mb-4 text-red-500">{message} ✔️</div>}
     </Layout>
   );
 }
